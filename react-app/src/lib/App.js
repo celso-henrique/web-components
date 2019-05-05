@@ -1,11 +1,23 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-const App = () => (
-  <div style={{ width: 640, margin: '15px auto' }}>
-    <h1>Hello React</h1>
-  </div>
-);
+const App = () => {
+  console.log('React app started');
+
+  return (
+    <div
+      style={{
+        margin: '15px 0',
+        border: '1px solid blue',
+        color: 'blue',
+        padding: '20px',
+        fontFamily: 'arial'
+      }}
+    >
+      <h1>Hello from React</h1>
+    </div>
+  );
+};
 
 class ReactApp extends HTMLElement {
   connectedCallback() {

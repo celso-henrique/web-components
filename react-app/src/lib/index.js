@@ -1,2 +1,1 @@
-import TextInput from "./TextInput";
-export { TextInput };
+import './App';

@@ -1,1 +1,6 @@
-{ "presets": [["react-app", { "absoluteRuntime": false }]] }
+{
+  "presets": [
+    "@babel/preset-react",
+    ["@babel/preset-env", { "useBuiltIns": "entry" }]
+  ]
+}
