@@ -2,5 +2,5 @@ version: "3"
 services:
   app:
     ports:
-      - "8080:80"
+      - "8081:80"
     build: .
