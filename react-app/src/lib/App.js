@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 
 const App = () => {
-  console.log('React app started');
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const addCounter = () => {
+      console.log('added to counter');
+      setCounter(counter + 1);
+    };
+
+    window.addEventListener('addCounter', addCounter);
+
+    return () => {
+      window.removeEventListener('addCounter', addCounter);
+    };
+  }, [counter]);
 
   return (
     <div
@@ -15,6 +28,7 @@ const App = () => {
       }}
     >
       <h1>Hello from React</h1>
+      <h2>Counter: {counter}</h2>
     </div>
   );
 };
@@ -24,7 +38,7 @@ class ReactApp extends HTMLElement {
     const mountPoint = document.createElement('span');
     this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
 
-    render(<App />, mountPoint);
+    render(<App counter={this.counter} />, mountPoint);
   }
 }
 

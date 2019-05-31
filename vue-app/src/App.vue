@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Hello from Vue</h1>
+    <button v-on:click="addCounter">Add to counter</button>
   </div>
 </template>
 
@@ -10,6 +11,11 @@ export default {
   created: () => {
     // eslint-disable-next-line
     console.log('Vue app started')
+  },
+  methods: {
+    addCounter: () => {
+      window.dispatchEvent(new Event('addCounter'))
+    }
   }
 }
 </script>
