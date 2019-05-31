@@ -38,7 +38,7 @@ class ReactApp extends HTMLElement {
     const mountPoint = document.createElement('span');
     this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
 
-    render(<App counter={this.counter} />, mountPoint);
+    render(<App />, mountPoint);
   }
 }
 
