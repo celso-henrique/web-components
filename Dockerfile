@@ -5,7 +5,8 @@ FROM node:10.15.3-alpine as builder
 WORKDIR /app/react-app
 
 COPY react-app/package.json .
-RUN npm install --silent
+COPY react-app/package-lock.json .
+RUN npm ci --silent
 COPY react-app .
 RUN npm run build
 
@@ -13,7 +14,8 @@ RUN npm run build
 WORKDIR /app/vue-app
 
 COPY vue-app/package.json .
-RUN npm install --silent
+COPY vue-app/package-lock.json .
+RUN npm ci --silent
 COPY vue-app .
 RUN npm run build
 
@@ -21,7 +23,8 @@ RUN npm run build
 WORKDIR /app/base-app
 
 COPY base-app/package.json .
-RUN npm install --silent
+COPY base-app/package-lock.json .
+RUN npm ci --silent
 COPY base-app .
 RUN npm run build
 
