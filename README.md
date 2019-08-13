@@ -1,6 +1,6 @@
 Web Components
 ====================
-Application that exemplifies the use of micro frontends with the web components approach.
+Application to show the use of micro frontends with the web components approach.
 
 # Running locally
 With docker and docker-compose installed just run:
