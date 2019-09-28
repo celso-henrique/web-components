@@ -18,18 +18,23 @@ const App = () => {
   }, [counter]);
 
   return (
-    <div
-      style={{
-        margin: '15px 0',
-        border: '1px solid blue',
-        color: 'blue',
-        padding: '20px',
-        fontFamily: 'arial'
-      }}
-    >
-      <h1>Hello from React</h1>
-      <h2>Counter: {counter}</h2>
-    </div>
+    <React.Fragment>
+      <style>
+        {`
+          #app {
+            margin: 15px 0;
+            border: 1px solid blue;
+            color: blue;
+            padding: 20px;
+            font-family: arial;
+          }
+        `}
+      </style>
+      <div id="app">
+        <h1>Hello from React</h1>
+        <h2>Counter: {counter}</h2>
+      </div>
+    </React.Fragment>
   );
 };
 
